@@ -1,0 +1,69 @@
+{
+	"postcode": "TR19 7AA",
+	"latitude": 50.065551,
+	"longitude": -5.714262,
+	"addresses": [{
+			"formatted_address": [
+				"Lands End Gift Shop",
+				"",
+				"",
+				"Sennen, Penzance",
+				"Cornwall"
+			],
+			"thoroughfare": "Lands End Gift Shop",
+			"building_name": "",
+			"sub_building_name": "Lands End Gift Shop",
+			"sub_building_number": "",
+			"building_number": "",
+			"line_1": "Lands End Gift Shop",
+			"line_2": "",
+			"line_3": "",
+			"line_4": "",
+			"locality": "Sennen",
+			"town_or_city": "Penzance",
+			"county": "Cornwall"
+		},
+		{
+			"formatted_address": [
+				"Lands End Hotel",
+				"",
+				"",
+				"Sennen, Penzance",
+				"Cornwall"
+			],
+			"thoroughfare": "Lands End Hotel",
+			"building_name": "",
+			"sub_building_name": "Lands End Hotel",
+			"sub_building_number": "",
+			"building_number": "",
+			"line_1": "Lands End Hotel",
+			"line_2": "",
+			"line_3": "",
+			"line_4": "",
+			"locality": "Sennen",
+			"town_or_city": "Penzance",
+			"county": "Cornwall"
+		},
+		{
+			"formatted_address": [
+				"Little Swingate",
+				"",
+				"",
+				"Sennen, Penzance",
+				"Cornwall"
+			],
+			"thoroughfare": "Little Swingate",
+			"building_name": "",
+			"sub_building_name": "Little Swingate",
+			"sub_building_number": "",
+			"building_number": "",
+			"line_1": "Little Swingate",
+			"line_2": "",
+			"line_3": "",
+			"line_4": "",
+			"locality": "Sennen",
+			"town_or_city": "Penzance",
+			"county": "Cornwall"
+		}
+	]
+}

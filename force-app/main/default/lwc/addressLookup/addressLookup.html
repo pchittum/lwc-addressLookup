@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="AddressLookup" icon-name="custom:custom80">
+
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
+            <template if:true={addresses}>
+                <template for:each={addresses} for:item="address">
+                    <p key={address}>{address}</p>
+                </template>
+            </template>
+            <template if:true={error}>
+                <p>There is an error</p>
+                <p>{error}</p>
+            </template>    
+        </div>
+
+    </lightning-card> 
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <!-- this is not ideal currently. the scroll CSS feature 
+         does not exactly telegraph it is active in Chrome. -->
+    <div class="scroll">
+        <lightning-radio-group 
+            name="addressRadioGroup"
+            label="Select an Address"
+            options={addresses}
+            value={value}
+            onchange={handleRadioChange}>
+        </lightning-radio-group>
+    </div>
+</template>

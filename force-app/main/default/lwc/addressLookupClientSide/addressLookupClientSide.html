@@ -1,0 +1,26 @@
+<template>
+        <lightning-card title="Address Lookup Client JS" icon-name="custom:custom80">
+    
+            <div class="slds-m-around_medium">
+
+                <c-get-address-io-test-addresses></c-get-address-io-test-addresses>
+
+                <lightning-input type="search" onchange={handleSearchKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
+
+                <lightning-button-group>
+                    <lightning-button onclick={handleFind} label="Find" variant="neutral" icon-name="utility:search"></lightning-button>
+                    <lightning-button onclick={handleSave} disabled={saveable} label="Save" variant="brand" icon-name="utility:save"></lightning-button>
+                </lightning-button-group>
+
+                <div>Searching on {searchKey}</div>
+
+                <c-address-lookup-list if:true={searchKey} onchange={handleChange} addresses={result}></c-address-lookup-list>
+
+                <!--TODO: create proper error display-->
+                <template if:true={error}>
+                    {error}<br>
+                    {stack}
+                </template>
+            </div>  
+        </lightning-card>
+    </template>

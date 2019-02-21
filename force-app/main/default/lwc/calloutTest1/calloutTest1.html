@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Address Lookup 1" icon-name="custom:custom80">
+
+        <div class="slds-m-around_medium">
+            <p>Test Post Codes (Do not cost against API key limits.)</p>
+            <ul>
+                <li>TR19 7AA</li>
+                <li>KW1 4YT</li>
+            </ul>
+            <lightning-input type="search" onchange={handleSearchKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
+            <lightning-button onclick={handleClick} label="Go" variant="neutral" icon-name="utility:connected_apps"></lightning-button>
+            <div>Searching on {searchKey}</div>
+            <c-address-lookup-list addresses={result}></c-address-lookup-list>
+            <!-- <div>{result}</div> -->
+            <template if:true={error}>{error}</template>
+        </div>  
+    </lightning-card>
+</template>
