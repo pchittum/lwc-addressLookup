@@ -43,6 +43,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     }
 
     handleFind(){
+        window.console.log('updated with cleanup');
 
         this.result = [];
         this.error = undefined;
@@ -86,8 +87,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
         if (this.selectedAddress){
 
             const addressArray = this.selectedAddress.value.split(',');
-            const updateObject = {};//this.getUpdateObject();
-            //let recordInput = {};
+            const updateObject = {};
 
             if (addressArray.length === 6){
 
@@ -101,14 +101,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
                     BillingLatitude: this.latitude,
                     BillingLongitude: this.longitude
                 };
-                // updateObject.fields = {
-                //     Id: {value: this.recordId},
-                //     BillingStreet : {value: `${addressArray[0]} ${addressArray[1]} ${addressArray[2]}`},
-                //     BillingCity : { value: addressArray[3]},
-                //     BillingState : { value: addressArray[4]},
-                //     BillingPostalCode : { value: addressArray[5]},
-                //     BillingCountry : { value: 'United Kingdom'}
-                // };
+
             }
 
             updateRecord(updateObject)
@@ -154,13 +147,6 @@ export default class AddressLookupCalloutLDS extends LightningElement {
 
     get hasResults(){
         return this.result.length > 0; 
-    }
-
-    getUpdateObject(){
-        return {
-            apiName: '',
-            fields: {}
-        }
     }
 
     errorCallback(error, stack){

@@ -34,12 +34,11 @@ export default class AddressLookupList extends LightningElement {
     }
 
     formatOption(address) { 
-        const formattedLabel = `${address.line1} ${address.line2} ${address.line3}, ${address.city}, ${address.county}`;
-        const formattedValue = `${address.line1},${address.line2},${address.line3},${address.city},${address.county},${address.postcode}`;
-        return {
-            'label': formattedLabel, 
-            'value': formattedValue
-        }
+
+        const label = `${address.line1} ${address.line2} ${address.line3}, ${address.city}, ${address.county}`;
+        const value = `${address.line1},${address.line2},${address.line3},${address.city},${address.county},${address.postcode}`;
+
+        return {label, value};
     }
 
 }
