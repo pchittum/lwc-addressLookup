@@ -14,7 +14,7 @@
             
             <div>Searching on {searchKey}</div>
             
-            <c-address-lookup-list if:true={searchKey} onchange={handleChange} addresses={result}></c-address-lookup-list>
+            <c-address-lookup-list if:true={searchKey} onchange={handleAddressChange} addresses={result}></c-address-lookup-list>
 
             <!--TODO: create proper error display-->
             <template if:true={error}>

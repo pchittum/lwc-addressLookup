@@ -35,7 +35,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     _latitude; 
     _longitude;
 
-    // apikey = getAddressIo.apiKey;
+    // fetch api key from org storage
     @wire(getApiKey) apikey;
 
     handleSearchKeyChange(event){
@@ -43,7 +43,6 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     }
 
     handleFind(){
-        window.console.log('updated with cleanup');
 
         this.result = [];
         this.error = undefined;
@@ -78,7 +77,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
 
     }
 
-    handleChange(event){
+    handleAddressChange(event){
         this.selectedAddress = event.detail;
     }
 
