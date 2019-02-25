@@ -29,6 +29,9 @@
             ],
             "c/get-address-io-test-addresses": [
                 "getAddressIoTestAddresses/getAddressIoTestAddresses.js"
+            ],
+            "c/get-address-connector": [
+                "getAddressConnector/getAddressConnector.js"
             ]
         }
     },
