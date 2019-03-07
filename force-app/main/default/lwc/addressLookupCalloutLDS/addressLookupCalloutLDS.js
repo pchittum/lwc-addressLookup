@@ -32,8 +32,8 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     @track searchKey = ''; 
 
     //private props
-    _latitude; 
-    _longitude;
+    latitude; 
+    longitude;
 
     // fetch api key from org storage
     @wire(getApiKey) apikey;
@@ -66,8 +66,8 @@ export default class AddressLookupCalloutLDS extends LightningElement {
                             };
                     });
                     this.result = addressList; 
-                    this._latitude = respAddressesObj.latitude; 
-                    this._longitude = respAddressesObj.longitude; 
+                    this.latitude = respAddressesObj.latitude; 
+                    this.longitude = respAddressesObj.longitude; 
             })
                 .catch(error => {
                     this.error = `Error: ${error}`; 
