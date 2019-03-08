@@ -21,14 +21,14 @@ import getAddressIo from 'c/getAddressIo';
  */
 export default class AddressLookupCalloutLDS extends LightningElement {
 
-    // Salesforce record
+    // Salesforce recordId allows use in record home
     @api recordId;
 
     //tracked reactive private props
     @track result = [];
-    @track selectedAddress = '';
     @track error;
     @track stack; 
+    @track selectedAddress = '';
     @track searchKey = ''; 
 
     //private props
@@ -65,9 +65,11 @@ export default class AddressLookupCalloutLDS extends LightningElement {
                                 "postcode": this.searchKey,
                             };
                     });
-                    this.result = addressList; 
                     this.latitude = respAddressesObj.latitude; 
                     this.longitude = respAddressesObj.longitude; 
+
+                    // triggers reactive property
+                    this.result = addressList; 
             })
                 .catch(error => {
                     this.error = `Error: ${error}`; 

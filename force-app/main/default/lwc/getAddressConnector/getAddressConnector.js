@@ -47,7 +47,7 @@ export default class GetAddressConnector {
 
     findAddressesFromPostcode = (postcode) => {
 
-        const calloutURI = this._urlRoot + `/find/${postcode}?api-key=${this._apiKey}&expand=true`;
+        const calloutURI = `${this._urlRoot}/find/${postcode}?api-key=${this._apiKey}&expand=true`;
     
         return fetch(calloutURI, {
             "method": "GET"
@@ -71,7 +71,7 @@ export default class GetAddressConnector {
 
     findAddressesFromPostcodeAndHouse = (postcode, houseNumber) => {
 
-        const calloutURI = this._urlRoot + `/find/${postcode}/${houseNumber}?api-key=${this._apiKey}&expand=true`;
+        const calloutURI = `${this._urlRoot}/find/${postcode}/${houseNumber}?api-key=${this._apiKey}&expand=true`;
     
         return fetch(calloutURI, {
             "method": "GET"
@@ -96,7 +96,7 @@ export default class GetAddressConnector {
 
     getDistanceBetweenPostcodes = (postcodeFrom, postcodeTo) => {
 
-        const calloutURI = this._urlRoot + `/distance/${postcodeFrom}/${postcodeTo}?api-key=${this._apiKey}`;
+        const calloutURI = `${this._urlRoot}/distance/${postcodeFrom}/${postcodeTo}?api-key=${this._apiKey}`;
     
         return fetch(calloutURI, {
             "method": "GET"
@@ -121,7 +121,7 @@ export default class GetAddressConnector {
 
     getLimits = () => {
 
-        const calloutURI = this._urlRoot + `/v2/usage?api-key=${this._apiKey}`;
+        const calloutURI = `${this._urlRoot}/v2/usage?api-key=${this._apiKey}`;
     
         return fetch(calloutURI, {
             "method": "GET"
@@ -146,7 +146,7 @@ export default class GetAddressConnector {
 
     getLimitsOnDay = (day, month, year) => {
 
-        const calloutURI = this._urlRoot + `/v2/usage/${day}/${month}/${year}?api-key=${this._apiKey}`;
+        const calloutURI = `${this._urlRoot}/v2/usage/${day}/${month}/${year}?api-key=${this._apiKey}`;
     
         return fetch(calloutURI, {
             "method": "GET"

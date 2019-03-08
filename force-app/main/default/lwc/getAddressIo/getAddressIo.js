@@ -42,6 +42,7 @@ const findAddressesFromPostcode = (apiKey, postcode) => {
             
     const calloutURI = `https://api.getAddress.io/find/${postcode}?api-key=${apiKey.data}&expand=true`;
 
+    // requires whitelisting of calloutURI in CSP Trusted Sites
     return fetch(calloutURI, {
         "method": "GET"
     }).then(
