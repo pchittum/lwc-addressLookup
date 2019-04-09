@@ -6,3 +6,5 @@ package.xml
 **/jsconfig.json
 
 **/.eslintrc.json
+
+force-app/main/default/namedCredentials/getAddress_io.namedCredential-meta.xml
