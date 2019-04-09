@@ -1,3 +1,4 @@
 .sfdx
 .vscode
 private
+force-app/main/default/lwc/jsconfig.json
