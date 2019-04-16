@@ -126,13 +126,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>addressLookupCalloutApex</componentName>
-        </componentInstances>
-        <name>Facet-31f005ad-c43f-441e-b586-540990799f1f</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
             <componentName>addressLookupCalloutLDS</componentName>
         </componentInstances>
         <name>Facet-3be0f778-1419-4d74-aade-e5ccbf6190a5</name>
@@ -168,22 +161,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>Facet-31f005ad-c43f-441e-b586-540990799f1f</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Address Lookup (Apex)</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
                 <value>Facet-3be0f778-1419-4d74-aade-e5ccbf6190a5</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
-                <value>Address Lookup (LDS)</value>
+                <value>Address Lookup</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
