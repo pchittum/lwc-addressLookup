@@ -8,3 +8,5 @@ package.xml
 **/.eslintrc.json
 
 force-app/main/default/namedCredentials/getAddress_io.namedCredential-meta.xml
+
+force-app/main/default/profiles
