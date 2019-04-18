@@ -1,5 +1,7 @@
 export default class GetAddressConnector {
 
+    //class-based implementation of service component
+
     constructor(apiKey){
         this._apiKey = apiKey;
         this._urlRoot = 'https://api.getAddress.io';

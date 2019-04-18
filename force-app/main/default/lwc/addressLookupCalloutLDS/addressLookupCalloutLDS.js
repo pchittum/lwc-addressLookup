@@ -6,7 +6,9 @@ import { updateRecord } from 'lightning/uiRecordApi';
 import getApiKey from '@salesforce/apex/GetAddressIoConnectSettings.getApiKey';
 
 //connector
-import getAddressIo from 'c/getAddressIo'; 
+//import getAddressIo from 'c/getAddressIo'; 
+
+import getAddressConnector from 'c/getAddressConnector';
 
 /**
  * ToDo:
@@ -34,6 +36,8 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     //private props
     latitude; 
     longitude;
+    hasRendered = false; 
+    connection; 
 
     // fetch api key from org storage
     @wire(getApiKey) apikey;
@@ -42,7 +46,18 @@ export default class AddressLookupCalloutLDS extends LightningElement {
         this.searchKey = event.target.value;
     }
 
+    renderedCallback() {
+        if (this.hasRendered) { 
+            return; 
+        }
+        this.hasRendered = true; 
+
+        //this.connection = new getAddressConnector(this.apikey.data); 
+    }
+
     handleFind(){
+
+        this.connection = new getAddressConnector(this.apikey.data);
 
         this.result = [];
         this.error = undefined;
@@ -51,8 +66,9 @@ export default class AddressLookupCalloutLDS extends LightningElement {
         if (this.searchKey && this.searchKey !== ''){
             let postcode = this.searchKey.replace(/\s/, '');
         
-            getAddressIo
-                .findAddressesFromPostcode( this.apikey, postcode)
+            //getAddressIo
+            this.connection
+                .findAddressesFromPostcode( /*this.apikey, */postcode)
                 .then(respAddressesObj => {
                     let addressList = respAddressesObj.addresses.map( item => {
                             // item at index 3 can contain two comma separated values.
