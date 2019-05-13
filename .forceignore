@@ -10,3 +10,5 @@ package.xml
 force-app/main/default/namedCredentials/getAddress_io.namedCredential-meta.xml
 
 force-app/main/default/profiles
+
+force-app/main/default/settings/OrgPreference.settings-meta.xml

@@ -56,11 +56,7 @@ const findAddressesFromPostcode = (apiKey, postcode) => {
             throw _getResponseError(response);
 
         }
-    ).then(responseJSON => {
-
-        return responseJSON;
-
-    });
+    );
 }; 
 
 export { findAddressesFromPostcode }; 
