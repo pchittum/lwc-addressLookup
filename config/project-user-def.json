@@ -1,0 +1,13 @@
+{
+    "Username": "testukaddresslookup@lwc.test",
+    "LastName": "Fotheringay", 
+    "Email": "pchittum@salesforce.com", 
+    "Alias": "ukaddlkp",
+    "TimeZoneSidKey": "Europe/London",
+    "LocaleSidKey": "en_US",
+    "EmailEncodingKey": "UTF-8",
+    "LanguageLocaleKey": "en_US",
+    "profileName": "Standard User",
+    "permsets": ["UK_Address_Lookup"],
+    "generatePassword": true
+}
