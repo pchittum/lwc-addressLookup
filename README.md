@@ -27,7 +27,8 @@ The API key is stored in the `Get_Address_IO__c` custom setting. I've chosen thi
 
 There is also an admin API key. This project implements none of the REST endpoints that require the admin key. 
 
-**Enabling Fetch with LockerService
+**Enabling Fetch with LockerService**
+
 Client side security is implemented with Locker Service. One feature is the implementation of content security policy (CSP). The default CSP policies for Lightning prohibit the use of `fetch` to any domain, but self. To enable `fetch` for a third party website, you'll be required to update the CSP Trusted Site setting
 
 ## Description of Files and Directories
