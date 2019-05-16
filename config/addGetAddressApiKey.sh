@@ -18,24 +18,31 @@ fi
 
 echo "Add api key for getAddress.io service for default scratch org."
 
-#read -p "Org to add API key: " user
+read -p "Org to add API key ([ENTER] if using default org): " user
 
 read -p "getAddresio.io api key: " key 
-
-#read -p "License Type [DEVELOPER,DEVELOPER_PRO,PARTIAL,FULL]: " license
-
-#read -p "Description: " description
 
 # construct sfdx command and arguments
 # here's where a few tweaks could be done either to change the sobject or field(s) to update
 # or different a different command and and its parameters could be used
 command="sfdx force:data:record:create"
-#adminuser="-u $user"
+#adminuser=""
 sobject="-s Get_Address_IO__c"  #add a -t for tooling api
 values="-v \"Name='api-key' apiKey__c='$key'\""
 
+# check if user is specified and if not use default env for this project
+if [[ -z "$user" ]]; then
+
+  adminuser=""
+
+else 
+
+  adminuser="-u $user"
+
+fi
+
 # reflect back command to user
-echo "RUNNING COMMAND: $command $sobject $values"
+echo "RUNNING COMMAND: $command $sobject $values $adminuser"
   
 # run command using eval
 # eval currently required with complex value sets passed into the -v flag
