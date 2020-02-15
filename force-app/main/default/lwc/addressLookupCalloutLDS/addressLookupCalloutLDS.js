@@ -27,11 +27,11 @@ export default class AddressLookupCalloutLDS extends LightningElement {
     @api recordId;
 
     //tracked reactive private props
-    @track result = [];
-    @track error;
-    @track stack; 
-    @track selectedAddress = '';
-    @track searchKey = ''; 
+    result = [];
+    error;
+    stack; 
+    selectedAddress = '';
+    searchKey = ''; 
 
     //private props
     latitude; 
@@ -59,18 +59,20 @@ export default class AddressLookupCalloutLDS extends LightningElement {
 
         this.connection = new getAddressConnector(this.apikey.data);
 
-        this.result = [];
         this.error = undefined;
         this.stack = undefined;
 
         if (this.searchKey && this.searchKey !== ''){
+            //strip out spaces from user input
             let postcode = this.searchKey.replace(/\s/, '');
         
             //getAddressIo
             this.connection
                 .findAddressesFromPostcode( /*this.apikey, */postcode)
                 .then(respAddressesObj => {
-                    let addressList = respAddressesObj.addresses.map( item => {
+                    this.latitude = respAddressesObj.latitude; 
+                    this.longitude = respAddressesObj.longitude; 
+                    this.result = respAddressesObj.addresses.map( item => {
                             // item at index 3 can contain two comma separated values.
                             return {
                                 "line1": item.formatted_address[0],
@@ -81,11 +83,6 @@ export default class AddressLookupCalloutLDS extends LightningElement {
                                 "postcode": this.searchKey,
                             };
                     });
-                    this.latitude = respAddressesObj.latitude; 
-                    this.longitude = respAddressesObj.longitude; 
-
-                    // triggers reactive property
-                    this.result = addressList; 
             })
                 .catch(error => {
                     this.error = `Error: ${error}`; 
@@ -110,7 +107,7 @@ export default class AddressLookupCalloutLDS extends LightningElement {
 
                 updateObject.fields = {
                     Id: this.recordId,
-                    BillingStreet: `${addressArray[0]} ${addressArray[1]} ${addressArray[2]}`,
+                    BillingStreet: `${addressArray[0]} ${addressArray[1]} ${addressArray[2]}`.trim(),
                     BillingCity: addressArray[3],
                     BillingState: addressArray[4],
                     BillingPostalCode: addressArray[5],
