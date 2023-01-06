@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/pchittum/lwc-addressLookup#readme",
   "devDependencies": {
-    "@salesforce/sfdx-lwc-jest": "^0.6.2"
+    "@salesforce/sfdx-lwc-jest": "^1.2.1"
   }
 }
